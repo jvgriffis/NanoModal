@@ -277,7 +277,8 @@ function Modal(content, options, overlay, customShow, customHide) {
                     } else if (btnObj.handler) {
                         giveButtonCustomClickListener(btnEl, btnObj);
                     }
-                    btnEl.text(btnObj.text);
+                    btnObj.html ? btnEl.html(btnObj.html) : btnEl.text(btnObj.text);
+                    if (btnObj.hint) btnEl.el.dataset.hint = btnObj.hint;
                     buttonArea.add(btnEl);
                     buttons.push(btnEl);
                 }
